@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -4904,9 +4901,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 10
@@ -4956,8 +4952,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &410087041
 Transform:
   m_ObjectHideFlags: 0
@@ -8423,6 +8423,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &681062386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8518,7 +8519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670376697060723136, guid: 0a42deceb533b324ba2f1ef7aa892b60,
         type: 3}
-      propertyPath: walls.Array.data[0]
+      propertyPath: 'walls.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10069,7 +10070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670376697060723136, guid: 08806d45854c78048880b2ce6238f606,
         type: 3}
-      propertyPath: walls.Array.data[0]
+      propertyPath: 'walls.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10952,7 +10953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670376697060723136, guid: b2ec6ea35668e714dbac7906d695cd01,
         type: 3}
-      propertyPath: doors.Array.data[1]
+      propertyPath: 'doors.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16235,7 +16236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2915894387910607049, guid: b66639a21481bf64fa959f154628bf72,
         type: 3}
-      propertyPath: doors.Array.data[2]
+      propertyPath: 'doors.Array.data[2]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4592150883925406325, guid: b66639a21481bf64fa959f154628bf72,
@@ -16335,7 +16336,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7336863826794662664, guid: 6a634feca6469c14bbce4bb3db4c1d9d,
         type: 3}
-      propertyPath: doors.Array.data[0]
+      propertyPath: 'doors.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8581433264774640557, guid: 6a634feca6469c14bbce4bb3db4c1d9d,
@@ -16467,12 +16468,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -110911983515959985, guid: f72792204275b264ca2c8352188c7348,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[0]
+      propertyPath: '_patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 2134383043}
     - target: {fileID: -110911983515959985, guid: f72792204275b264ca2c8352188c7348,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[1]
+      propertyPath: '_patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1644104262}
     - target: {fileID: 207739201334258967, guid: f72792204275b264ca2c8352188c7348,
@@ -17439,22 +17440,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[0]
+      propertyPath: '_patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1096388245}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[1]
+      propertyPath: '_patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1041897673}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[2]
+      propertyPath: '_patrolPoints.Array.data[2]'
       value: 
       objectReference: {fileID: 989683249}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[3]
+      propertyPath: '_patrolPoints.Array.data[3]'
       value: 
       objectReference: {fileID: 2115466649}
     m_RemovedComponents: []
@@ -21200,7 +21201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5807266812240656250, guid: cf1f57aa4c9862b4993ad0ce422f8945,
         type: 3}
-      propertyPath: doors.Array.data[3]
+      propertyPath: 'doors.Array.data[3]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6891463478517629950, guid: cf1f57aa4c9862b4993ad0ce422f8945,
@@ -21378,7 +21379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670376697060723136, guid: f8dca9984aedda54485873ccd9183094,
         type: 3}
-      propertyPath: doors.Array.data[1]
+      propertyPath: 'doors.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21757,6 +21758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
@@ -26098,17 +26100,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7431908952264626704, guid: 329052ba34d6d594098957c6720059d7,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[0]
+      propertyPath: '_patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 603962210}
     - target: {fileID: 7431908952264626704, guid: 329052ba34d6d594098957c6720059d7,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[1]
+      propertyPath: '_patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 610268886}
     - target: {fileID: 7431908952264626704, guid: 329052ba34d6d594098957c6720059d7,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[2]
+      propertyPath: '_patrolPoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1903337269}
     m_RemovedComponents: []
@@ -27087,17 +27089,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[0]
+      propertyPath: '_patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1899705160}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[1]
+      propertyPath: '_patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1371038882}
     - target: {fileID: 7552849277503606014, guid: dd143f36d34b8414f9f50a789017f4fe,
         type: 3}
-      propertyPath: _patrolPoints.Array.data[2]
+      propertyPath: '_patrolPoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1911600987}
     - target: {fileID: 8580698533418830207, guid: dd143f36d34b8414f9f50a789017f4fe,
